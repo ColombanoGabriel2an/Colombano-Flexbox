@@ -1,0 +1,176 @@
+/*  Mobile First */
+
+body {
+	font-family: 'Georgia', serif;
+	background-color: #ffffff;
+	color: #333333;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px;
+	border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+	font-size: 24px;
+	color: #004d61; /* Azul petróleo */
+	margin: 0;
+}
+
+.menu-icon {
+	font-size: 24px;
+	cursor: pointer;
+	display: block; /* Solo visible en mobile */
+}
+
+.nav-desktop {
+	display: none; /* Oculto en mobile */
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
+	gap: 24px;
+}
+
+.noticias-principales {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.noticias-principales article {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 16px;
+}
+
+.noticias-principales img {
+	width: 100%;
+	border-radius: 6px;
+}
+
+.noticias-principales h2 {
+	color: #004d61;
+	margin: 8px 0 4px;
+	font-size: 18px;
+}
+
+.noticias-principales p {
+	color: #666;
+	margin: 0 0 8px;
+	font-size: 14px;
+}
+
+.noticias-principales a {
+	color: #5ec4d0; /* Celeste suave */
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.noticias-secundarias h3,
+.formulario h3 {
+	color: #004d61;
+	font-size: 16px;
+	margin-bottom: 8px;
+}
+
+.noticias-secundarias ul {
+	list-style: none;
+	padding: 0;
+}
+
+.noticias-secundarias li {
+	margin-bottom: 8px;
+}
+
+.noticias-secundarias a {
+	color: #5ec4d0;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.formulario form {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.formulario input {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.formulario button {
+	background-color: #004d61;
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+footer {
+	text-align: center;
+	padding: 16px;
+	background-color: #f8f8f8;
+	color: #777;
+	margin-top: 32px;
+	font-size: 12px;
+}
+
+/*   Desktop (≥768px) */
+
+@media (min-width: 768px) {
+	.menu-icon {
+		display: none;
+	}
+
+	.nav-desktop {
+		display: block;
+		background-color: #004d61;
+	}
+
+	.nav-desktop ul {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 12px 0;
+		list-style: none;
+	}
+
+	.nav-desktop li {
+		margin: 0 20px;
+	}
+
+	.nav-desktop a {
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	main {
+		flex-direction: row;
+		gap: 32px;
+	}
+
+	.noticias-principales {
+		flex: 3;
+	}
+
+	.noticias-secundarias,
+	.formulario {
+		flex: 1;
+	}
+}
