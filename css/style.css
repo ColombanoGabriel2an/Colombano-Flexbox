@@ -1,5 +1,3 @@
-/*  Mobile First */
-
 body {
 	font-family: 'Georgia', serif;
 	background-color: #ffffff;
@@ -8,37 +6,64 @@ body {
 	padding: 0;
 }
 
+/* HEADER */
 header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	text-align: center;
 	padding: 16px;
 	border-bottom: 1px solid #ccc;
+	position: relative;
 }
 
 header h1 {
-	font-size: 24px;
-	color: #004d61; /* Azul petróleo */
+	font-size: 28px;
+	color: #004d61;
 	margin: 0;
 }
 
 .menu-icon {
+	position: absolute;
+	top: 16px;
+	right: 16px;
 	font-size: 24px;
 	cursor: pointer;
-	display: block; /* Solo visible en mobile */
+	display: block; /* visible solo en mobile */
 }
 
+/* NAV - DESKTOP */
 .nav-desktop {
-	display: none; /* Oculto en mobile */
+	display: none;
 }
 
 main {
 	display: flex;
 	flex-direction: column;
 	padding: 16px;
-	gap: 24px;
+	gap: 32px;
 }
 
+/* NOTICIAS SECUNDARIAS */
+.noticias-secundarias h3 {
+	color: #004d61;
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.noticias-secundarias ul {
+	list-style: none;
+	padding: 0;
+}
+
+.noticias-secundarias li {
+	margin-bottom: 8px;
+}
+
+.noticias-secundarias a {
+	color: #5ec4d0;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+/* NOTICIAS PRINCIPALES */
 .noticias-principales {
 	display: flex;
 	flex-direction: column;
@@ -46,8 +71,6 @@ main {
 }
 
 .noticias-principales article {
-	display: flex;
-	flex-direction: column;
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 16px;
 }
@@ -70,32 +93,22 @@ main {
 }
 
 .noticias-principales a {
-	color: #5ec4d0; /* Celeste suave */
+	color: #5ec4d0;
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 14px;
 }
 
-.noticias-secundarias h3,
+/* FORMULARIO */
+.formulario {
+	padding: 24px 16px;
+	background-color: #f9f9f9;
+}
+
 .formulario h3 {
 	color: #004d61;
 	font-size: 16px;
-	margin-bottom: 8px;
-}
-
-.noticias-secundarias ul {
-	list-style: none;
-	padding: 0;
-}
-
-.noticias-secundarias li {
-	margin-bottom: 8px;
-}
-
-.noticias-secundarias a {
-	color: #5ec4d0;
-	text-decoration: none;
-	font-size: 14px;
+	margin-bottom: 12px;
 }
 
 .formulario form {
@@ -121,6 +134,7 @@ main {
 	font-size: 14px;
 }
 
+/* FOOTER */
 footer {
 	text-align: center;
 	padding: 16px;
@@ -130,8 +144,7 @@ footer {
 	font-size: 12px;
 }
 
-/*   Desktop (≥768px) */
-
+/*    Desktop  */
 @media (min-width: 768px) {
 	.menu-icon {
 		display: none;
@@ -165,12 +178,16 @@ footer {
 		gap: 32px;
 	}
 
-	.noticias-principales {
-		flex: 3;
+	.noticias-secundarias {
+		flex: 1;
 	}
 
-	.noticias-secundarias,
+	.noticias-principales {
+		flex: 2;
+	}
+
 	.formulario {
-		flex: 1;
+		max-width: 768px;
+		margin: 0 auto;
 	}
 }
