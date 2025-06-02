@@ -26,14 +26,15 @@ header h1 {
 	right: 16px;
 	font-size: 24px;
 	cursor: pointer;
-	display: block; /* visible solo en mobile */
+	display: block;
 }
 
-/* NAV - DESKTOP */
+/* NAV */
 .nav-desktop {
 	display: none;
 }
 
+/* MAIN - MOBILE */
 main {
 	display: flex;
 	flex-direction: column;
@@ -41,29 +42,7 @@ main {
 	gap: 32px;
 }
 
-/* NOTICIAS SECUNDARIAS */
-.noticias-secundarias h3 {
-	color: #004d61;
-	font-size: 18px;
-	margin-bottom: 8px;
-}
-
-.noticias-secundarias ul {
-	list-style: none;
-	padding: 0;
-}
-
-.noticias-secundarias li {
-	margin-bottom: 8px;
-}
-
-.noticias-secundarias a {
-	color: #5ec4d0;
-	text-decoration: none;
-	font-size: 14px;
-}
-
-/* NOTICIAS PRINCIPALES */
+/* NOTICIAS PRINCIPALES - MOBILE */
 .noticias-principales {
 	display: flex;
 	flex-direction: column;
@@ -99,10 +78,34 @@ main {
 	font-size: 14px;
 }
 
+/* NOTICIAS SECUNDARIAS */
+.noticias-secundarias h3 {
+	color: #004d61;
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.noticias-secundarias ul {
+	list-style: none;
+	padding: 0;
+}
+
+.noticias-secundarias li {
+	margin-bottom: 8px;
+}
+
+.noticias-secundarias a {
+	color: #5ec4d0;
+	text-decoration: none;
+	font-size: 14px;
+}
+
 /* FORMULARIO */
 .formulario {
 	padding: 24px 16px;
 	background-color: #f9f9f9;
+	margin: 32px auto;
+	max-width: calc(100% - 32px); /* Margen de 1 pulgada aprox a cada lado */
 }
 
 .formulario h3 {
@@ -144,7 +147,9 @@ footer {
 	font-size: 12px;
 }
 
-/*    Desktop  */
+/* ----------------------------
+   Desktop layout
+---------------------------- */
 @media (min-width: 768px) {
 	.menu-icon {
 		display: none;
@@ -158,36 +163,42 @@ footer {
 	.nav-desktop ul {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
 		margin: 0;
 		padding: 12px 0;
 		list-style: none;
-	}
-
-	.nav-desktop li {
-		margin: 0 20px;
+		gap: 16px;
 	}
 
 	.nav-desktop a {
 		color: white;
 		text-decoration: none;
 		font-weight: bold;
+		padding: 4px 8px;
 	}
 
 	main {
 		flex-direction: row;
 		gap: 32px;
+		padding: 32px;
+	}
+
+	.noticias-principales {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 24px;
+		flex: 2;
+	}
+
+	.noticias-principales article {
+		border-bottom: none;
 	}
 
 	.noticias-secundarias {
 		flex: 1;
 	}
 
-	.noticias-principales {
-		flex: 2;
-	}
-
 	.formulario {
-		max-width: 768px;
-		margin: 0 auto;
+		max-width: 600px;
 	}
 }
