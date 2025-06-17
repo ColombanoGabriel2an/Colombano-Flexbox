@@ -247,48 +247,4 @@ footer {
     }
 
 	
-	.modal {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		z-index: 9999;
-	}
-
-	.modal-contenido {
-		background-color: #ffffff;
-		padding: 24px;
-		border-radius: 8px;
-		width: 90%;
-		max-width: 400px;
-		box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-		text-align: center;
-	}
-
-	.modal h3 {
-		color: #004d61;
-		margin-top: 0;
-	}
-
-	.modal p {
-		color: #333;
-	}
-
-	.cerrar {
-		position: absolute;
-		top: 16px;
-		right: 24px;
-		font-size: 24px;
-		cursor: pointer;
-		color: #888;
-	}
-
-	.oculto {
-		display: none;
-	}
 }
